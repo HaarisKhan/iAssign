@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from . import fields
+#from . import fields
 
 
 class Chat(models.Model):
@@ -46,5 +46,4 @@ class Requests(models.Model):
     end_person = models.OneToOneField(Person)
     original_person_approval = models.BooleanField
     end_person_approval = models.BooleanField
-
 
