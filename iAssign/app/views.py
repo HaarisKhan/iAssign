@@ -11,6 +11,7 @@ from . import models
 
 # Create your views here.
 
+
 def Login(request):
     next = request.GET.get('next', '/home/')
     if request.method == "POST":
@@ -32,6 +33,10 @@ def Login(request):
 def Logout(request):
     logout(request)
     return HttpResponseRedirect('/login/')
+
+
+def SignUp(request):
+    return render(request, "create_account.html")
 
 
 def Home(request):
