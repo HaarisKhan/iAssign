@@ -2,8 +2,6 @@ from django.db import models
 from django.contrib.auth.models import User
 from . import fields
 
-# Create your models here.
-
 
 class Chat(models.Model):
     username = models.ForeignKey(User)
@@ -32,3 +30,4 @@ class TimeSlot(models.Model):
 
 class Requests(models.Model):
     times = fields.ListField()
+

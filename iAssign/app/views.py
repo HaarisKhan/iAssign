@@ -1,39 +1,54 @@
 from django.contrib.auth import authenticate, login, logout
+from django.http import HttpResponse
 from django.http import HttpResponseRedirect
+from django.http import JsonResponse
 from django.shortcuts import render, render_to_response
 from django.template.context_processors import csrf
 from django.urls import reverse
 
+from iAssign import settings
 from . import models
 
 # Create your views here.
 
-
-def index(request):
-    return render(request, 'main/index.html')
-
-
-def login_view(request):
-    if request.POST:
+def Login(request):
+    next = request.GET.get('next', '/home/')
+    if request.method == "POST":
         username = request.POST['username']
         password = request.POST['password']
         user = authenticate(username=username, password=password)
 
         if user is not None:
-            login(request, user)
-            return HttpResponseRedirect(reverse('home'))
+            if user.is_active:
+                login(request, user)
+                return HttpResponseRedirect(next)
+            else:
+                return HttpResponse("Account is not active at the moment.")
         else:
-            return render(request, 'main/login.html')
+            return HttpResponseRedirect(settings.LOGIN_URL)
+    return render(request, "login.html", {'next': next})
 
-    return render_to_response('main/login.html')
 
-
-def logout_view(request):
+def Logout(request):
     logout(request)
-    return HttpResponseRedirect(reverse('home'))
+    return HttpResponseRedirect('/login/')
 
 
-
-def message(request):
+def Home(request):
     c = models.Chat.objects.all()
-    return render(request, 'main/messages.html', {'chat': c})
+    return render(request, "index.html", {'home': 'active', 'chat': c})
+
+def Post(request):
+    if request.method == "POST":
+        msg = request.POST.get('msgbox', None)
+        c = models.Chat(user=request.user, message=msg)
+        if msg != '':
+            c.save()
+        return JsonResponse({ 'msg': msg, 'user': c.user.username })
+    else:
+        return HttpResponse('Request must be POST.')
+
+
+def Messages(request):
+    c = models.Chat.objects.all()
+    return render(request, "messages.html" , {'chat': c})
