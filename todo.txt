@@ -8,3 +8,14 @@ Core Functionality / Features:
   a) Control calendar, including tasks and members
   b) Approve switches / swaps of tasks
   c) Version control, access to revision history, restoration of previous calendars.
+
+Needs:
+1) Channel / Group Creation
+  a) Create manually using classes
+2) Calendar Creation
+  a) Google Calendar? Or create manually
+3) Login / Administration Control
+  a) Django / Framework usually has their own system of login. Or use the Messenger API Authentication.
+4) Chat System Creation
+  a) Messenger? Slack? Firebase?
+5)
