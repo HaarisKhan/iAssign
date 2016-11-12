@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Chats
+{% endblock %}
+
+{% block body %}
+    {% for chat in c %}
+        {{ chat.message }}
+    {% endfor %}
+{% endblock %}
