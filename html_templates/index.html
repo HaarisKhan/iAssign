@@ -1,6 +1,5 @@
-{% load staticfiles %}
-
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
 
@@ -13,10 +12,10 @@
     <title>Home Page</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="{% static "css/full-slider.css" %}" rel="stylesheet">
+    <link href="css/full-slider.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -56,10 +55,10 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href={% url 'login' %}>Log In</a>
+                        <a href="login.html">Log In</a>
                     </li>
                     <li>
-                        <a href={% url 'signup' %}>Sign Up</a>
+                        <a href="create_account.html">Sign Up</a>
                     </li>
                     <!-- <li>
                         <a href="#">Contact</a>
@@ -84,21 +83,21 @@
         <div class="carousel-inner">
             <div class="item active">
                 <!-- Set the first background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('../static/img/slider1.jpg');"></div>
+                <div class="fill" style="background-image:url('images/slider1.jpg');"></div>
                 <div class="carousel-caption">
                     <h1>iAssign</h1>
                 </div>
             </div>
             <div class="item">
                 <!-- Set the second background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('../static/img/slider2.jpg');"></div>
+                <div class="fill" style="background-image:url('images/slider2.jpg');"></div>
                 <div class="carousel-caption">
                     <h1>iAssign</h1>
                 </div>
             </div>
             <div class="item">
                 <!-- Set the third background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('../static/img/slider3.jpg');"></div>
+                <div class="fill" style="background-image:url('images/slider3.jpg');"></div>
                 <div class="carousel-caption">
                     <h1>iAssign</h1>
                 </div>
@@ -141,10 +140,10 @@
     <!-- /.container -->
 
     <!-- jQuery -->
-    <script src="{% static "js/jquery.js" %}" ></script>
+    <script src="js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="{% static "js/bootstrap.min.js"%}"></script>
+    <script src="js/bootstrap.min.js"></script>
 
     <!-- Script to Activate the Carousel -->
     <script>
