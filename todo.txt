@@ -1,0 +1,10 @@
+MVP:
+Core Functionality / Features:
+
+1) Time-interval based sign-up system (repetitions).
+  a) Tasks are customizable (repeating tasks can be adjusted variably or consistently)
+
+2) Administration Control
+  a) Control calendar, including tasks and members
+  b) Approve switches / swaps of tasks
+  c) Version control, access to revision history, restoration of previous calendars.
