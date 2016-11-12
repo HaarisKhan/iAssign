@@ -19,15 +19,16 @@ class Board(models.Model):
     people = models.ManyToManyField(Person)
     task = models.CharField(max_length=250)
     num_people = models.IntegerField()
-    moderator = models.ManyToOneField(Person)
-    times = fields.ListField()
-    requests = fields.ListField()
+    moderator = models.ManyToManyField(Person)
+    times = models.ManyToManyField(TimeSlot)
+    # requests = models.ForeignKey(Requests)
 
 
 class TimeSlot(models.Model):
-    boards = fields.ListField()
+    boards = models.ManyToManyField(Board)
 
 
 class Requests(models.Model):
-    times = fields.ListField()
+    board = models.ForeignKey(Board, on_delete=models.CASCADE)
+    #times = models.
 
