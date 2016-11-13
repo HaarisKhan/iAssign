@@ -109,8 +109,7 @@
   			</div>
 
     		<div class="col-sm-6 col-xs-8" id = "main">
-    			<h3 style="font-family: 'Dosis', cursive;">Main</h3>
-
+          <div class = "row" style="height: 60px"><h3 style="font-family: 'Dosis', cursive;">Main</h3>
     				<button id = "addBtn" type="button" class="btn btn-success btn-circle" onclick="popup()"><span class="glyphicon glyphicon-plus glyphicon-larger"></span></button>
 
     				<div id="addModal" class="modal">
@@ -127,10 +126,13 @@
 					</form>
   					</div>
   					</div>
-                {% if calendar_display %}
+            </div>
+            <div class = "row" style="height: calc(50% - 30px); background-color: green">
+              {% if calendar_display %}
                     {{ calendar_display|safe }}
                 {% endif %}
-
+            </div>   
+            <div class = "row" style="height: calc(50% - 30px); background-color: purple"></div>
     		</div>
 
     		<div class="col-sm-3 col-xs-hidden" id="todoRequest">
