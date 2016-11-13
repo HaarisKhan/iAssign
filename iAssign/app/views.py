@@ -22,6 +22,7 @@ def ThirdAuthLogin(request):
                                               'user': request.user})
 
 
+
 def Login(request):
     next = request.GET.get('next', '/home/')
     if request.method == "POST":
@@ -79,3 +80,9 @@ def calendar(request):
             return render(request, "appPage.html", {'chat': c})
 
     return render(request, "appPage.html")
+
+def getInfo():
+    # Given that the user successfully logged in using Google Authentication,
+    # Create a user instance and store their first and last name and email.
+    # May not need to do it in this function; perhaps do it on the page they
+    # authenticate instead
