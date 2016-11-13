@@ -38,20 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app',
-    'social.apps.django_app.default',
+    'social.apps.django_app.default'
 ]
-
-TEMPLATE_CONTEXT_PROCESSORS = (
-   'django.contrib.auth.context_processors.auth',
-   'django.core.context_processors.debug',
-   'django.core.context_processors.i18n',
-   'django.core.context_processors.media',
-   'django.core.context_processors.static',
-   'django.core.context_processors.tz',
-   'django.contrib.messages.context_processors.messages',
-   'social.apps.django_app.context_processors.backends',
-   'social.apps.django_app.context_processors.login_redirect',
-)
 
 AUTHENTICATION_BACKENDS = (
    'social.backends.google.GoogleOAuth2',
@@ -62,6 +50,7 @@ LOGIN_REDIRECT_URL = '/'
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = "900109865170-266jr1t48uc91lstqq6uf9cb8je02git.apps.googleusercontent.com"
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = "3E5C_pcZ3po59FZFOfxePBMq"
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -91,30 +80,6 @@ TEMPLATES = [
     },
 ]
 
-TEMPLATE_CONTEXT_PROCESSORS = (
-   'django.contrib.auth.context_processors.auth',
-   'django.core.context_processors.debug',
-   'django.core.context_processors.i18n',
-   'django.core.context_processors.media',
-   'django.core.context_processors.static',
-   'django.core.context_processors.tz',
-   'django.contrib.messages.context_processors.messages',
-   'social.apps.django_app.context_processors.backends',
-   'social.apps.django_app.context_processors.login_redirect',
-)
-
-AUTHENTICATION_BACKENDS = (
-   'social.backends.google.GoogleOAuth2',
-   'django.contrib.auth.backends.ModelBackend',
-)
-
-LOGIN_REDIRECT_URL = '/'
-
-
-WSGI_APPLICATION = 'iAssign.wsgi.application'
-
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = "887521497351-vdb1f65776phpraat3f6bdg6icu18jrq.apps.googleusercontent.com"
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = "NklNHPqzpKIJx_9GXe1j3-i9"
 
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases

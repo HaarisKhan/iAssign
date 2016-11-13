@@ -36,7 +36,7 @@ def Login(request):
 
 def Logout(request):
     logout(request)
-    return HttpResponseRedirect('/login/')
+    return HttpResponseRedirect('/')
 
 
 def SignUp(request):
@@ -64,7 +64,7 @@ def forgot(request):
 
 def Messages(request):
     c = models.Chat.objects.all()
-    return render(request, "messages.html" , {'chat': c})
+    return render(request, "messages.html", {'chat': c})
 
 """
 <form action="#" method="get">

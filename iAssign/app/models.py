@@ -8,23 +8,46 @@ class Chat(models.Model):
     message = models.CharField(max_length=250)
 
 
-class Board(models.Model):
-    people = models.ManyToManyField(Person)
-    task = models.CharField(max_length=250)
-    num_people = models.IntegerField()
-    moderator = models.ManyToManyField(Person)
-    times = models.ForeignKey(TimeIntervalObject, on_delete=models.CASCADE)
-    requests = models.ForeignKey(Request)
-
-    def Create_Time_Interval(self):
-        return None
-
-
 class Person(models.Model):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
-    boards = models.ManyToManyField(Board)
+    boards = models.ManyToManyField("Board")
     email = models.CharField(max_length=250)
+
+
+class TimeIntervalObject(models.Model):
+    boards = models.OneToOneField("Board")
+    start_time = models.DateTimeField()
+    end_time = models.DateTimeField()
+    people = []
+    description = models.CharField(max_length=250)
+
+
+class Request(models.Model):
+    board = models.ForeignKey("Board", on_delete=models.CASCADE)
+    original_time = models.OneToOneField(TimeIntervalObject, related_name="start")
+    original_person = models.OneToOneField(Person)
+    end_time = models.OneToOneField(TimeIntervalObject)
+    end_person = models.OneToOneField(Person, related_name="approval")
+    original_person_approval = models.BooleanField()
+    end_person_approval = models.BooleanField()
+
+
+class Board(models.Model):
+    people = models.ManyToManyField(Person, related_name="users")
+    task = models.CharField(max_length=250)
+    num_people = models.IntegerField()
+    requests = models.ForeignKey(Request, related_name="requests")
+    times = []
+    users = []
+
+    def addPerson(self, person):
+        if type(person) == Person:
+            self.users.append(person)
+        return
+
+    def addTimeInterval(self, startTime, endTime, description):
+        return None
 
 
 class Organization(models.Model):
@@ -32,19 +55,3 @@ class Organization(models.Model):
     boards = models.ForeignKey(Board, on_delete=models.CASCADE)
     org_name = models.CharField(max_length=250)
 
-
-class TimeIntervalObject(models.Model):
-    boards = models.OneToOneField(Board)
-    start_time = models.DateTimeField()
-    end_time = models.DateTimeField()
-    people = models.ManyToManyField(Person)
-
-
-class Request(models.Model):
-    board = models.ForeignKey(Board, on_delete=models.CASCADE)
-    original_time = models.OneToOneField(TimeIntervalObject)
-    original_person = models.OneToOneField(Person)
-    end_time = models.OneToOneField(TimeIntervalObject)
-    end_person = models.OneToOneField(Person)
-    original_person_approval = models.BooleanField()
-    end_person_approval = models.BooleanField()
