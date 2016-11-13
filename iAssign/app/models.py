@@ -2,10 +2,15 @@ from django.db import models
 from django.contrib.auth.models import User, AbstractUser
 
 
+class Chat(models.Model):
+    username = models.ForeignKey(User)
+    create = models.DateTimeField(auto_now_add=True)
+    message = models.CharField(max_length=250)
+
+
 class Person(models.Model):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
-<<<<<<< HEAD
     boards = models.ManyToManyField(Board)
     email = models.CharField(max_length=250)
 
@@ -44,7 +49,6 @@ class Request(models.Model):
     end_person = models.OneToOneField(Person)
     original_person_approval = models.BooleanField()
     end_person_approval = models.BooleanField()
-=======
     #boards = models.ManyToManyField(Board)
 
 
@@ -65,7 +69,3 @@ class Request(models.Model):
 #     board = models.ForeignKey(Board, on_delete=models.CASCADE)
 #     #times = models.
 #
-
-"""
-
->>>>>>> 0a4a73f76d9332f4c88e1f8c547dea328de67e4d
