@@ -18,6 +18,7 @@ def ThirdAuthLogin(request):
                                           'user': request.user})
 
 
+
 def Login(request):
     next = request.GET.get('next', '/home/')
     if request.method == "POST":
