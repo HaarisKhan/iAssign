@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # from django.db import models
 # import ast
 #
@@ -54,8 +54,7 @@
 #
 #     def value_to_string(self, obj):
 #         value = self._get_val_from_obj(obj)
-#         return self.get_db_prep_value(value)
-=======
+
 from django.db import models
 import ast
 
@@ -112,4 +111,3 @@ class SetField(models.TextField):
     def value_to_string(self, obj):
         value = self._get_val_from_obj(obj)
         return self.get_db_prep_value(value)
->>>>>>> f6abd66b75fd84c92f0d3eb5cbd00e25e9b1c4aa

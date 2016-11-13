@@ -8,4 +8,7 @@ urlpatterns = [
     url(r'^signup/$', views.SignUp, name='signup'),
     url(r'^post/$', views.Post, name='post'),
     url(r'^messages/$', views.Messages, name='messages'),
+    url('', include('social.apps.django_app.urls', namespace='social')),
+    url('', include('django.contrib.auth.urls', namespace='auth')),
+    url(r'^$', views.ThirdAuthLogin, name='thirdauthlogin'),
     ]
