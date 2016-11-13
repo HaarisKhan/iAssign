@@ -19,7 +19,8 @@ class TimeIntervalObject(models.Model):
     boards = models.OneToOneField("Board")
     start_time = models.DateTimeField()
     end_time = models.DateTimeField()
-    people = models.ManyToManyField(Person)
+    people = []
+    description = models.CharField(max_length=250)
 
 
 class Request(models.Model):
@@ -36,11 +37,16 @@ class Board(models.Model):
     people = models.ManyToManyField(Person, related_name="users")
     task = models.CharField(max_length=250)
     num_people = models.IntegerField()
-    moderator = models.ManyToManyField(Person)
-    times = models.ForeignKey(TimeIntervalObject, on_delete=models.CASCADE)
     requests = models.ForeignKey(Request, related_name="requests")
+    times = []
+    users = []
 
-    def Create_Time_Interval(self):
+    def addPerson(self, person):
+        if type(person) == Person:
+            self.users.append(person)
+        return
+
+    def addTimeInterval(self, startTime, endTime, description):
         return None
 
 
