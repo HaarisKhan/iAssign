@@ -92,7 +92,6 @@ def DisplayCalendar(request):
                                          'user': request.user,
                                          'calendar_display': calendar_display})
 
-
 def ThirdAuthLogin(request):
     if request.user.is_anonymous:
         return render(request, "index.html", {'request': request,
@@ -102,7 +101,6 @@ def ThirdAuthLogin(request):
         return render(request, "appPage.html", {'request': request,
                                               'user': request.user,
                                                 'calendar_display': calendar_display})
-
 
 def Login(request):
     next = request.GET.get('next', '/home/')
