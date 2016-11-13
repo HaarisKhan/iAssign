@@ -2,7 +2,7 @@ $('#chat-form').on('submit', function(event){
     event.preventDefault();
 
     $.ajax({
-        url : '/post/',
+        url : '#',
         type : 'POST',
         data : { msgbox : $('#chat-msg').val() },
 
