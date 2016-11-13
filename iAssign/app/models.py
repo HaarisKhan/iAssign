@@ -16,10 +16,8 @@ class Person(models.Model):
 
 
 class TimeIntervalObject(models.Model):
-    board = models.OneToOneField("Board")
     start_time = models.DateTimeField()
     end_time = models.DateTimeField()
-    people = []
     description = models.CharField(max_length=250)
 
 
@@ -34,20 +32,35 @@ class Request(models.Model):
 
 
 class Board(models.Model):
-    people = models.ManyToManyField(Person, related_name="users")
-    task = models.CharField(max_length=250)
-    num_people = models.IntegerField()
-    requests = models.ForeignKey(Request, related_name="requests")
-    times = []
-    users = []
+    #people = models.ManyToManyField(Person, related_name="users")
+    #task = models.CharField(max_length=250)
+    #num_people = models.IntegerField()
+    #requests = models.ForeignKey(Request, related_name="requests")
+    times = set()
+    requests = set()
+    users = set()
 
     def addPerson(self, person):
         if type(person) == Person:
-            self.users.append(person)
-        return
+            if person not in self.users:
+                self.users.add(person)
+        
 
-    def addTimeInterval(self, startTime, endTime, description):
-        return None
+    def removePerson(self, person):
+        if type(person) == Person:
+            if person in self.users:
+                self.users.remove(person)
+
+
+    def addTimeInterval(self, interval):
+        if type(interval) == TimeIntervalObject:
+            if interval not in self.times:
+                self.times.add(interval)
+
+    def removeTimeInterval(self, interval):
+        if type(interval) == TimeIntervalObject:
+            if interval in self.times:
+                self.times.remove(interval)
 
 
 class Organization(models.Model):

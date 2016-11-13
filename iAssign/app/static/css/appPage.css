@@ -102,3 +102,9 @@
     text-decoration: none;
     cursor: pointer;
 }
+
+.card {
+    background-color: grey;
+    border: 1px solid black;
+    width: 300px;
+}

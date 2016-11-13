@@ -92,6 +92,7 @@
                     chatlist.scrollTop = chatlist.scrollHeight;
                 </script>
             </ul>
+            <script type="text/javascript">scrollWin()</script>
         </div>
     </div>
 
@@ -132,15 +133,46 @@
                     {{ calendar_display|safe }}
                 {% endif %}
             </div>   
-            <div class = "row" style="height: calc(50% - 30px)"></div>
+            <div class = "row" style="height: calc(50% - 30px)">
+            <h3 style="font-family: 'Dosis', cursive;">Tasks</h3>
+            {% if time %}
+              {% for obj in time %}
+              <div class="card button" onclick="decline({{obj}})" style='background-color: green; color:white; border: 1px solid black; width: 50%; margin-bottom: 5px; padding-left: 10px'>
+               {{ obj.start_time }}
+              <br>
+                {{ obj.end_time }}                
+              <br>
+                {{obj.description}}
+              <br>
+              </div>
+              {% endfor %}
+            {% endif %}
+            </div>
     		</div>
 
     		<div class="col-sm-3 col-xs-hidden" id="todoRequest">
-    			<h3 style="font-family: 'Dosis', cursive;">Todo/Requests</h3>
+    			<h3 style="font-family: 'Dosis', cursive;">Requests</h3>
+            {% if time %}
+              {% for obj in time %}
+              <div class="card button"  onclick="accept({{obj}})" style='background-color: brown; color:white; border: 1px solid black; width: 100%; margin-bottom: 5px; padding-left: 10px'>
+               {{ obj.start_time }}
+              <br>
+                {{ obj.end_time }}                
+              <br>
+                {{obj.description}}
+              <br>
+              </div>
+              {% endfor %}
+            {% endif %}
     		</div>
   		</div>
   	</div>
 <script src="{% static "js/addPopUp.js" %}"></script>
+<script>
+function scrollWin() {
+    window.scrollBy(0, 9999999);
+}
+</script>
 </body>
 </html>
 

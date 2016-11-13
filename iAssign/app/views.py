@@ -41,6 +41,7 @@ SCOPES = 'https://www.googleapis.com/auth/calendar.readonly'
 CLIENT_SECRET_FILE = 'client_secret.json'
 APPLICATION_NAME = 'Google Calendar API Python Quickstart'
 
+board = models.Board()
 
 def get_credentials():
     """Gets valid user credentials from storage.
@@ -84,7 +85,7 @@ def MakeCalendar(request):
     calendar_display = "<iframe src=\"https://calendar.google.com/calendar/embed?src="+username+"%40"+email_host+"&ctz="+timezone+"\" style=\"border: 0\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>"
 
     if request.POST:
-        if 'start_time' in request.POST:
+        if 'start_time' in request.POST and 'end_time' in request.POST and 'description' in request.POST:
             startTime = request.POST['start_time']
             endTime = request.POST['end_time']
             description = request.POST['description']
@@ -96,10 +97,21 @@ def MakeCalendar(request):
                 timeInterval.description = description
                 if timeInterval is not None:
                     timeInterval.save()
+                    board.addTimeInterval(timeInterval)
+                    
+                    intervals = []
+
+                    for i in board.times:
+                        intervals.append(i)
+
+                    c = models.Chat.objects.all()
+
+
                     return render(request, "appPage.html", {'request': request,
                                                             'user': request.user,
                                                             'calendar_display': calendar_display,
-                                                            'time': timeInterval})
+                                                            'time': intervals,
+                                                            'chat': c})
         elif 'chat-msg' in request.POST:
             chat = models.Chat()
             chat.message = request.POST['chat-msg']
@@ -107,10 +119,17 @@ def MakeCalendar(request):
             if chat is not None:
                 chat.save()
                 c = models.Chat.objects.all()
+                intervals = []
+
+                for i in board.times:
+                    print(i)
+                    intervals.append(i)
+
                 return render(request, "appPage.html", {'request': request,
                                                             'user': request.user,
                                                             'calendar_display': calendar_display,
-                    'chat': c})
+                    'chat': c,
+                    'time': intervals})
     return render(request, "appPage.html", {'request': request,
                                          'user': request.user,
                                          'calendar_display': calendar_display})
