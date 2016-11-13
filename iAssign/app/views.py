@@ -14,8 +14,12 @@ from . import models
 
 
 def ThirdAuthLogin(request):
-    return render(request, "index.html", {'request': request,
+    if request.user.is_anonymous:
+        return render(request, "index.html", {'request': request,
                                           'user': request.user})
+    else:
+        return render(request, "appPage.html", {'request': request,
+                                              'user': request.user})
 
 
 
@@ -77,7 +81,7 @@ def calendar(request):
 
     return render(request, "appPage.html")
 
-def getInfo():
+# def getInfo():
     # Given that the user successfully logged in using Google Authentication,
     # Create a user instance and store their first and last name and email.
     # May not need to do it in this function; perhaps do it on the page they
