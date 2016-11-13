@@ -9,5 +9,5 @@ urlpatterns = [
     url('', include('social.apps.django_app.urls', namespace='social')),
     url('', include('django.contrib.auth.urls', namespace='auth')),
     url(r'^$', views.ThirdAuthLogin, name='thirdauthlogin'),
-    url(r'^calendar/$', views.calendar, name='calendar')
+    url(r'^DisplayCalendar/$', views.DisplayCalendar, name='DisplayCalendar')
     ]

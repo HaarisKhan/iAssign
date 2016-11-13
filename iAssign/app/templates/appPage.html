@@ -67,6 +67,10 @@
   			<div class="col-sm-3 col-xs-4 mainRow">
   				<div class="row" id = "calendar">
   					<h3 style="color: white; font-family: 'Dosis', cursive;">Calendar</h3>
+                    <li>
+                    <a href="{%  url 'DisplayCalendar' %}" style="color:white">My Calendar</a>
+                    </li>
+
   				</div>
   				<div class="row" id = "chat">
   					<h3 style="color: white; font-family: 'Dosis', cursive;">Chat</h3>
@@ -123,6 +127,9 @@
 					</form>
   					</div>
   					</div>
+                {% if calendar_display %}
+                    {{ calendar_display|safe }}
+                {% endif %}
 
     		</div>
 
