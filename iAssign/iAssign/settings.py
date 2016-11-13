@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app',
+    'social.apps.django_app.default'
 ]
 
 AUTHENTICATION_BACKENDS = (
@@ -49,6 +50,7 @@ LOGIN_REDIRECT_URL = '/'
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = "900109865170-266jr1t48uc91lstqq6uf9cb8je02git.apps.googleusercontent.com"
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = "3E5C_pcZ3po59FZFOfxePBMq"
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
