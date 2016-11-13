@@ -9,12 +9,14 @@ from django.urls import reverse
 from iAssign import settings
 from . import models
 
+
 # Create your views here.
 
 
 def ThirdAuthLogin(request):
     return render(request, "index.html", {'request': request,
-                                         'user': request.user})
+                                          'user': request.user})
+
 
 def Login(request):
     next = request.GET.get('next', '/home/')
@@ -48,58 +50,28 @@ def Home(request):
     return render(request, "index.html", {'home': 'active', 'chat': c})
 
 
-def Post(request):
-    if request.method == "POST":
-        msg = request.POST.get('msgbox', None)
-        c = models.Chat(user=request.user, message=msg)
-        if msg != '':
-            c.save()
-        return JsonResponse({ 'msg': msg, 'user': c.user.username })
-    else:
-        return HttpResponse('Request must be POST.')
-
-
 def forgot(request):
     return render(request, "forgot_password.html")
 
 
-def Messages(request):
-    c = models.Chat.objects.all()
-    return render(request, "messages.html", {'chat': c})
-
-
 def calendar(request):
     if request.POST:
-        startTime = request.POST['start_time']
-        endTime = request.POST['end_time']
-        description = request.POST['description']
+        print(request.POST)
 
-        timeInterval = models.TimeIntervalObject
+        if 'start_time' in request.POST:
+            startTime = request.POST['start_time']
+            endTime = request.POST['end_time']
+            description = request.POST['description']
 
-        timeInterval.start_time = startTime
-        timeInterval.end_time = endTime
-        timeInterval.description = description
+            if startTime and endTime and description:
+                timeInterval = models.TimeIntervalObject
+                timeInterval.start_time = startTime
+                timeInterval.end_time = endTime
+                timeInterval.description = description
 
-
+        elif 'chat-msg' in request.POST:
+            print("Yay")
+            c = models.Chat.objects.all()
+            return render(request, "appPage.html", {'chat': c})
 
     return render(request, "appPage.html")
-
-"""
-<form action="#" method="get">
- <input type="datetime-local" value="" name="start_time" size="1"/>
- <input type="datetime-local" value="" name="end_time" size="1"/>
- <input type="string" placeholder="Description" name="description" size="60"/>
- <input type="submit" class="btn" value="Add Time" name="mybtn">
-</form>
-"""
-
-# Create new time interval
-def RequestBoardPage(request):
-    board = request.GET.get('board')
-    board.Create_Time_Interval()
-    if request.GET.get('Add Time'):
-        start_time = (request.GET.get('start_time'))
-        end_time = (request.GET.get('end_time'))
-        description = (request.GET.get('description'))
-
-    return render(request, 'm/templateHTML.html', )
