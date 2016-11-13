@@ -121,7 +121,7 @@ def DisplayCalendar(request):
     extract_username = calendar_resource['summary'].split("@")
     username = extract_username[0]
     timezone = calendar_resource['timeZone']
-    calendar_display = "<iframe src=\"https://calendar.google.com/calendar/embed?src="+username+"%40gmail.com&ctz="+timezone+"\" style=\"border: 0\" width=\"800\" height=\"600\" frameborder=\"0\" scrolling=\"no\"></iframe>"
+    calendar_display = "<iframe src=\"https://calendar.google.com/calendar/embed?src="+username+"%40gmail.com&ctz="+timezone+"\" style=\"border: 0\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>"
 
     return render(request, "appPage.html", {'request': request,
                                          'user': request.user,
