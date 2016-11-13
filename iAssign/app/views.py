@@ -94,13 +94,15 @@ def DisplayCalendar(request):
 
 def ThirdAuthLogin(request):
     if request.user.is_anonymous:
-        return render(request, "index.html", {'request': request,
-                                          'user': request.user})
+        return render(request, "index.html", {'request': request, 'user': request.user})
     else:
-        calendar_display = MakeCalendar(request)
-        return render(request, "appPage.html", {'request': request,
-                                              'user': request.user,
-                                                'calendar_display': calendar_display})
+        previous_user = False
+        for person in models.Person.objects.all():
+            if str(request.user) == person.username:
+                previous_user = True
+        if not previous_user:
+            models.Person.objects.create(username=str(request.user))
+        return render(request, "appPage.html", {'request': request, 'user': request.user})
 
 def Login(request):
     next = request.GET.get('next', '/home/')
