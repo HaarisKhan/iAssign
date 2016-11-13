@@ -8,6 +8,7 @@
   <meta name="Ram K" content="That's me">
   <link rel="stylesheet" href="css/appPage.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/addPopUp.js"></script>
 </head>
 <body>
 	<div class="container-fluid">
@@ -23,7 +24,22 @@
 
     		<div class="col-sm-6 col-xs-8" id = "main">
     			<h3>Main</h3>
-    			<button type="button" class="btn btn-success btn-circle"><span class="glyphicon glyphicon-plus glyphicon-larger"></span></button>
+    				
+    				<button id = "addBtn" type="button" class="btn btn-success btn-circle" onclick="popup()"><span class="glyphicon glyphicon-plus glyphicon-larger"></span></button>
+
+    				<div id="addModal" class="modal">
+
+  					<!-- Modal content -->
+  					<div class="modal-content">
+    				<span class="close" onclick="closeSpan()">x</span>
+   					<form action="#" method="get">
+ 						<input type="datetime-local" value="" name="start_time" size="1"/>
+ 						<input type="datetime-local" value="" name="end_time" size="1"/>
+ 						<input type="string" placeholder="Description" name="description" size="60"/>
+ 						<input type="submit" class="btn" value="Add Time" name="mybtn">
+					</form>
+  					</div>
+  					</div>
 
     		</div>
 
@@ -34,6 +50,8 @@
   	</div>
 </body>
 </html>
+
+
 
 
 
