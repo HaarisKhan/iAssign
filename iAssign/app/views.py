@@ -3,8 +3,7 @@ from django.shortcuts import render
 
 import httplib2
 import os
-#
-#from quickstart import get_credentials
+
 
 from apiclient import discovery
 from oauth2client import client
@@ -28,45 +27,6 @@ from . import models
 
 # Create your views here.
 
-
-def ThirdAuthLogin(request):
-    if request.user.is_anonymous:
-        return render(request, "index.html", {'request': request,
-                                          'user': request.user})
-    else:
-        return render(request, "appPage.html", {'request': request,
-                                              'user': request.user})
-
-
-# def get_credentials():
-#     """Gets valid user credentials from storage.
-#
-#     If nothing has been stored, or if the stored credentials are invalid,
-#     the OAuth2 flow is completed to obtain the new credentials.
-#
-#     Returns:
-#         Credentials, the obtained credential.
-#     """
-#     # If modifying these scopes, delete your previously saved credentials
-#     # at ~/.credentials/calendar-python-quickstart.json
-#     SCOPES = 'https://www.googleapis.com/auth/calendar'
-#     CLIENT_SECRET_FILE = 'client_secret.json'
-#     APPLICATION_NAME = 'Google Calendar API Python Quickstart'
-#     home_dir = os.path.expanduser('~')
-#     credential_dir = os.path.join(home_dir, '.credentials')
-#     if not os.path.exists(credential_dir):
-#         os.makedirs(credential_dir)
-#     credential_path = os.path.join(credential_dir,
-#                                    'calendar-python-quickstart.json')
-#
-#     store = Storage(credential_path)
-#     credentials = store.get()
-#     if not credentials or credentials.invalid:
-#         flow = client.flow_from_clientsecrets(CLIENT_SECRET_FILE, SCOPES)
-#         flow.user_agent = APPLICATION_NAME
-#         # Needed only for compatibility with Python 2.6
-#         credentials = tools.run(flow, store)
-#     return credentials
 
 try:
     import argparse
@@ -111,23 +71,36 @@ def get_credentials():
     return credentials
 
 
-def DisplayCalendar(request):
-
-    #credentials = get_credentials()
+def MakeCalendar(request):
     credentials = get_credentials()
     http = credentials.authorize(httplib2.Http())
     service = discovery.build('calendar', 'v3', http=http)
-    calendar_resource = service.calendarList().get(calendarId='primary').execute() #.list(userId='me').execute()
+    calendar_resource = service.calendarList().get(calendarId='primary').execute()  # .list(userId='me').execute()
     extract_username = calendar_resource['summary'].split("@")
     username = extract_username[0]
     email_host = extract_username[1]
     timezone = calendar_resource['timeZone']
-    calendar_display = "<iframe src=\"https://calendar.google.com/calendar/embed?src="+username+"%40"+email_host+"&ctz="+timezone+"\" style=\"border: 0\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>"
+    calendar_display = "<iframe src=\"https://calendar.google.com/calendar/embed?src=" + username + "%40" + email_host + "&ctz=" + timezone + "\" style=\"border: 0\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>"
+    print("calendar is ", calendar_display)
+    return calendar_display
 
+
+def DisplayCalendar(request):
+
+    calendar_display = MakeCalendar(request)
     return render(request, "appPage.html", {'request': request,
                                          'user': request.user,
                                          'calendar_display': calendar_display})
 
+def ThirdAuthLogin(request):
+    if request.user.is_anonymous:
+        return render(request, "index.html", {'request': request,
+                                          'user': request.user})
+    else:
+        calendar_display = MakeCalendar(request)
+        return render(request, "appPage.html", {'request': request,
+                                              'user': request.user,
+                                                'calendar_display': calendar_display})
 
 def Login(request):
     next = request.GET.get('next', '/home/')
