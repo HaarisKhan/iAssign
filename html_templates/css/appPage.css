@@ -1,0 +1,35 @@
+
+#calendar {
+    height: 50%;
+    overflow: scroll;
+    background-color: #373D48;
+    border: 2px solid black;
+    padding-left: 18px;
+    color: white;
+}
+
+#chat {
+    height: 50%;
+    overflow: scroll;
+    background-color: #373D48;
+    border: 2px solid black;
+    padding-left: 18px;
+}
+
+#main {
+	height: 100%;
+    overflow: scroll;
+    background-color: white;
+    border: 2px solid black
+}
+
+#todoRequest {
+    height: 100%;
+    overflow: scroll;
+    background-color: white;
+    border: 2px solid black
+}
+
+.mainRow {
+	height: 100vh;
+}
