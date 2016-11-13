@@ -24,8 +24,8 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{% static 'css/chat.css' %}">
+    <!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
+    <!-- <link rel="stylesheet" href="{% static 'css/chat.css' %}"> -->
 
 <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -49,13 +49,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">iAssign</a>
+                <a class="navbar-brand" href="index.html">iAssign</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="login.html">Log In</a>
+                        <a href="login.html">Login</a>
                     </li>
                     <li>
                         <a href="create_account.html">Sign Up</a>
@@ -83,23 +83,57 @@
         <div class="carousel-inner">
             <div class="item active">
                 <!-- Set the first background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('images/slider1.jpg');"></div>
-                <div class="carousel-caption">
-                    <h1>iAssign</h1>
+                <div class="carousel-blur">
+                    <div class="fill" style="background-image:url('images/slider3.jpg');"></div>
                 </div>
+                <div class="title">
+                    <br>
+                    <h1 style="text-shadow: 0.1em 0.1em 0.2em black; font-size:100px; -webkit-text-stroke: 1px black;">iAssign</h1>
+                    <br>
+                    <button type="button" class="log-btn" onclick="location.href = 'login.html';">Login</button>
+                    <br>
+                    <br>
+                    <h1 style="text-shadow: 0.01em 0.01em 0.2em black; font-size:50px; -webkit-text-stroke: 0.7px black; font-family: 'Ranga', cursive;">Hi, I'm Girish!</h1>
+
+                </div>
+                <!-- <div class="carousel-caption">
+                    <h1>iAssign</h1>
+                </div> -->
             </div>
             <div class="item">
                 <!-- Set the second background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('images/slider2.jpg');"></div>
-                <div class="carousel-caption">
+                <div class="carousel-blur">
+                    <div class="fill" style="background-image:url('images/slider2.jpg');"></div>
+                </div>
+                <!-- <div class="carousel-caption">
                     <h1>iAssign</h1>
+                </div> -->
+                <div class="title">
+                    <br>
+                    <h1 style="text-shadow: 0.1em 0.1em 0.2em black; font-size:100px; -webkit-text-stroke: 1px black;">iAssign</h1>
+                    <br>
+                    <button type="button" class="log-btn" onclick="location.href = 'login.html';">Login</button>
+                    <br>
+                    <br>
+                    <h1 style="text-shadow: 0.01em 0.01em 0.2em black; font-size:50px; -webkit-text-stroke: 0.7px black; font-family: 'Ranga', cursive;">Organization Made Easy</h1>
                 </div>
             </div>
             <div class="item">
                 <!-- Set the third background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('images/slider3.jpg');"></div>
-                <div class="carousel-caption">
+                <div class="carousel-blur">
+                    <div class="fill" style="background-image:url('images/slider1.jpg');"></div>
+                </div>
+                <!-- <div class="carousel-caption">
                     <h1>iAssign</h1>
+                </div> -->
+                <div class="title">
+                    <br>
+                    <h1 style="text-shadow: 0.1em 0.1em 0.2em black; font-size:100px; -webkit-text-stroke: 1px black;">iAssign</h1>
+                    <br>
+                    <button type="button" class="log-btn" onclick="location.href = 'login.html';">Login</button>
+                    <br>
+                    <br>
+                    <h1 style="text-shadow: 0.01em 0.01em 0.2em black; font-size:50px; -webkit-text-stroke: 0.7px black; font-family: 'Ranga', cursive;">95% users say, "Best App Ever!"</h1>
                 </div>
             </div>
         </div>
