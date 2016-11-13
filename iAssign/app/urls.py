@@ -8,4 +8,5 @@ urlpatterns = [
     url(r'^signup/$', views.SignUp, name='signup'),
     url(r'^post/$', views.Post, name='post'),
     url(r'^messages/$', views.Messages, name='messages'),
-    ]
+    url(r'^board/$', views.RequestBoardPage, name='boards')
+]

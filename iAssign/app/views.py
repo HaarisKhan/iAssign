@@ -43,6 +43,7 @@ def Home(request):
     c = models.Chat.objects.all()
     return render(request, "index.html", {'home': 'active', 'chat': c})
 
+
 def Post(request):
     if request.method == "POST":
         msg = request.POST.get('msgbox', None)
@@ -57,3 +58,23 @@ def Post(request):
 def Messages(request):
     c = models.Chat.objects.all()
     return render(request, "messages.html" , {'chat': c})
+
+"""
+<form action="#" method="get">
+ <input type="datetime-local" value="" name="start_time" size="1"/>
+ <input type="datetime-local" value="" name="end_time" size="1"/>
+ <input type="string" placeholder="Description" name="description" size="60"/>
+ <input type="submit" class="btn" value="Add Time" name="mybtn">
+</form>
+"""
+
+# Create new time interval
+def RequestBoardPage(request):
+    board = request.GET.get('board')
+    board.Create_Time_Interval()
+    if request.GET.get('Add Time'):
+        start_time = (request.GET.get('start_time'))
+        end_time = (request.GET.get('end_time'))
+        description = (request.GET.get('description'))
+
+    return render(request, 'm/templateHTML.html', )
