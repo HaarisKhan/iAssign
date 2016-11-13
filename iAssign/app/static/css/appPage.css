@@ -10,6 +10,7 @@
     border: 2px solid black;
     padding-left: 18px;
     color: white;
+    padding-right: 18px;
 }
 
 #chat {
@@ -18,6 +19,7 @@
     background-color: #373D48;
     border: 2px solid black;
     padding-left: 18px;
+    padding-right: 18px;
 }
 
 #main {

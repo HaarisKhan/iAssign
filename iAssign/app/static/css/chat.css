@@ -5,5 +5,5 @@
 
 .panel-body {
     overflow-y: scroll;
-    height: 85%;
+    height: calc(100% - 125px);
 }
