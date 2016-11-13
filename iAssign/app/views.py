@@ -69,20 +69,29 @@ def calendar(request):
             description = request.POST['description']
 
             if startTime and endTime and description:
-                timeInterval = models.TimeIntervalObject
-                timeInterval.start_time = startTime
-                timeInterval.end_time = endTime
-                timeInterval.description = description
+                models.TimeIntervalObject.objects.create(start_time=startTime, end_time=endTime, description=description)
+                timeInterval.save()
 
         elif 'chat-msg' in request.POST:
-            print("Yay")
-            c = models.Chat.objects.all()
-            return render(request, "appPage.html", {'chat': c})
+            chat = models.Chat.objects.create(message=request.POST.get('chat-msg'))
+            print(request.POST.get('chat-msg'))
+            print(chat)
+            if chat is not None:
+                chat.save()
+                c = models.Chat.objects.all()
+                print(c)
+                return render(request, "appPage.html", {'chat': c})
 
     return render(request, "appPage.html")
 
+<<<<<<< HEAD
+
+def getInfo():
+=======
 # def getInfo():
+>>>>>>> f6fa49ce4eba7206fe6765f86281b30cd4fcc02b
     # Given that the user successfully logged in using Google Authentication,
     # Create a user instance and store their first and last name and email.
     # May not need to do it in this function; perhaps do it on the page they
     # authenticate instead
+    return None
