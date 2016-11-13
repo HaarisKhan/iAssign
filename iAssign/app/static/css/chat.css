@@ -1,5 +1,6 @@
 #chat-bottom {
-    bottom: 10px;
+    float: bottom;
+
 }
 
 .panel-body {
