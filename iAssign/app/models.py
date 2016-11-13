@@ -3,7 +3,9 @@ from django.contrib.auth.models import User, AbstractUser
 
 
 class Chat(models.Model):
-    message = models.CharField(max_length=250, blank=True)
+    created = models.DateTimeField(auto_now_add=True)
+    user = models.ForeignKey(User)
+    message = models.CharField(max_length=200)
 
 
 class Person(models.Model):

@@ -72,35 +72,60 @@ def get_credentials():
 
 
 def MakeCalendar(request):
+
     credentials = get_credentials()
     http = credentials.authorize(httplib2.Http())
     service = discovery.build('calendar', 'v3', http=http)
-    calendar_resource = service.calendarList().get(calendarId='primary').execute()  # .list(userId='me').execute()
+    calendar_resource = service.calendarList().get(calendarId='primary').execute() #.list(userId='me').execute()
     extract_username = calendar_resource['summary'].split("@")
     username = extract_username[0]
     email_host = extract_username[1]
     timezone = calendar_resource['timeZone']
-    calendar_display = "<iframe src=\"https://calendar.google.com/calendar/embed?src=" + username + "%40" + email_host + "&ctz=" + timezone + "\" style=\"border: 0\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>"
-    print("calendar is ", calendar_display)
-    return calendar_display
+    calendar_display = "<iframe src=\"https://calendar.google.com/calendar/embed?src="+username+"%40"+email_host+"&ctz="+timezone+"\" style=\"border: 0\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>"
 
+    if request.POST:
+        if 'start_time' in request.POST:
+            startTime = request.POST['start_time']
+            endTime = request.POST['end_time']
+            description = request.POST['description']
 
-def DisplayCalendar(request):
-
-    calendar_display = MakeCalendar(request)
+            if startTime and endTime and description:
+                timeInterval = models.TimeIntervalObject()
+                timeInterval.start_time = startTime
+                timeInterval.end_time = endTime
+                timeInterval.description = description
+                if timeInterval is not None:
+                    timeInterval.save()
+                    return render(request, "appPage.html", {'request': request,
+                                                            'user': request.user,
+                                                            'calendar_display': calendar_display,
+                                                            'time': timeInterval})
+        elif 'chat-msg' in request.POST:
+            chat = models.Chat()
+            chat.message = request.POST['chat-msg']
+            chat.user = request.user
+            if chat is not None:
+                chat.save()
+                c = models.Chat.objects.all()
+                return render(request, "appPage.html", {'request': request,
+                                                            'user': request.user,
+                                                            'calendar_display': calendar_display,
+                    'chat': c})
     return render(request, "appPage.html", {'request': request,
                                          'user': request.user,
                                          'calendar_display': calendar_display})
+
+
+def DisplayCalendar(request):
+    return MakeCalendar(request)
 
 def ThirdAuthLogin(request):
     if request.user.is_anonymous:
         return render(request, "index.html", {'request': request,
                                           'user': request.user})
     else:
-        calendar_display = MakeCalendar(request)
-        return render(request, "appPage.html", {'request': request,
-                                              'user': request.user,
-                                                'calendar_display': calendar_display})
+        return MakeCalendar(request)
+
 
 def Login(request):
     next = request.GET.get('next', '/home/')
