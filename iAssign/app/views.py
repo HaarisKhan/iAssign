@@ -120,8 +120,9 @@ def DisplayCalendar(request):
     calendar_resource = service.calendarList().get(calendarId='primary').execute() #.list(userId='me').execute()
     extract_username = calendar_resource['summary'].split("@")
     username = extract_username[0]
+    email_host = extract_username[1]
     timezone = calendar_resource['timeZone']
-    calendar_display = "<iframe src=\"https://calendar.google.com/calendar/embed?src="+username+"%40gmail.com&ctz="+timezone+"\" style=\"border: 0\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>"
+    calendar_display = "<iframe src=\"https://calendar.google.com/calendar/embed?src="+username+"%40"+email_host+"&ctz="+timezone+"\" style=\"border: 0\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>"
 
     return render(request, "appPage.html", {'request': request,
                                          'user': request.user,
@@ -191,9 +192,11 @@ def calendar(request):
 
 
 def getInfo():
-# def getInfo():
     # Given that the user successfully logged in using Google Authentication,
     # Create a user instance and store their first and last name and email.
     # May not need to do it in this function; perhaps do it on the page they
     # authenticate instead
     return None
+
+def renderApp(request):
+    return render(request, "appPage.html", {'request': request,'user': request.user})
