@@ -36,7 +36,7 @@ def Login(request):
 
 def Logout(request):
     logout(request)
-    return HttpResponseRedirect('/login/')
+    return HttpResponseRedirect('/')
 
 
 def SignUp(request):
