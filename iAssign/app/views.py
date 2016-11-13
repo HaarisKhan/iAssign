@@ -14,8 +14,12 @@ from . import models
 
 
 def ThirdAuthLogin(request):
-    return render(request, "index.html", {'request': request,
+    if request.user.is_anonymous:
+        return render(request, "index.html", {'request': request,
                                           'user': request.user})
+    else:
+        return render(request, "appPage.html", {'request': request,
+                                              'user': request.user})
 
 
 def Login(request):
