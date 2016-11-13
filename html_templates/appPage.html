@@ -8,12 +8,11 @@
   <meta name="Ram K" content="That's me">
   <link rel="stylesheet" href="css/appPage.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
-  <script src="js/addPopUp.js"></script>
 </head>
 <body>
 
   <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <nav class="navbar navbar-inverse navbar-static-top navbar-default" role="navigation" style="margin-bottom: 0; border: 0">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -43,11 +42,9 @@
         </div>
         <!-- /.container -->
     </nav>
-    <br>
-    <br>
-
-	<div class="container-fluid">
-	  	<div class="row mainRow">
+    
+	<div class="container-fluid" style="height: calc(100vh - 50px); width: 100vw">
+		<div class="row mainRow">
   			<div class="col-sm-3 col-xs-4 mainRow">
   				<div class="row" id = "calendar">
   					<h3 style="color: white; font-family: 'Dosis', cursive;">Calendar</h3>	
@@ -83,6 +80,8 @@
     		</div>
   		</div>
   	</div>
+
+  	<script src="js/addPopUp.js"></script>
 </body>
 </html>
 

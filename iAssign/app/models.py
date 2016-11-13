@@ -9,12 +9,14 @@ class Chat(models.Model):
 class Person(models.Model):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
-    boards = models.ManyToManyField("Board")
+    boards = []
     email = models.CharField(max_length=250)
 
 
+
+
 class TimeIntervalObject(models.Model):
-    boards = models.OneToOneField("Board")
+    board = models.OneToOneField("Board")
     start_time = models.DateTimeField()
     end_time = models.DateTimeField()
     people = []
