@@ -5,15 +5,15 @@
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 578.3 422.6"
 	 style="enable-background:new 0 0 578.3 422.6;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#B2EBF2;}
+	.st0{display:none;fill:#B2EBF2;}
 	.st1{fill:#80DEEA;}
 	.st2{fill:#FFFFFF;}
 	.st3{fill:#42A5F5;}
 	.st4{fill:#4FC3F7;}
 	.st5{fill:#FF7043;}
 	.st6{font-family:'SavoyeLetPlain';}
-	.st7{font-size:50px;}
-	.st8{fill:#FFFFFF;stroke:#FFFFFF;stroke-miterlimit:10;}
+	.st7{font-size:73.6512px;}
+	.st8{font-size:64px;}
 </style>
 <sodipodi:namedview  bordercolor="#666666" borderopacity="1.0" fit-margin-bottom="0" fit-margin-left="0" fit-margin-right="0" fit-margin-top="0" id="base" inkscape:current-layer="layer1" inkscape:cx="462.41983" inkscape:cy="252.40346" inkscape:document-units="px" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="716" inkscape:window-maximized="1" inkscape:window-width="1366" inkscape:window-x="-8" inkscape:window-y="-8" inkscape:zoom="0.70710678" pagecolor="#ffffff" showgrid="false">
 	</sodipodi:namedview>
@@ -22,8 +22,8 @@
 		c-2.6,0-4.8-2.1-4.8-4.8V18.6C13.1,16,15.3,13.9,17.9,13.9z"/>
 	<path id="rect4732" class="st1" d="M105,93.7h370.9c2.6,0,4.8,2.1,4.8,4.8v272.1c0,2.6-2.1,4.8-4.8,4.8H105c-2.6,0-4.8-2.1-4.8-4.8
 		V98.5C100.2,95.9,102.4,93.7,105,93.7z"/>
-	<path id="rect4138" class="st2" d="M117,79.1H488c2.6,0,4.8,2.1,4.8,4.8V356c0,2.6-2.1,4.8-4.8,4.8H117c-2.6,0-4.8-2.1-4.8-4.8
-		V83.8C112.3,81.2,114.4,79.1,117,79.1z"/>
+	<path id="rect4138" class="st2" d="M117,74.1h371c2.6,0,4.8,2.1,4.8,4.8V351c0,2.6-2.1,4.8-4.8,4.8H117c-2.6,0-4.8-2.1-4.8-4.8
+		V78.8C112.3,76.2,114.4,74.1,117,74.1z"/>
 	<path id="rect4140" class="st3" d="M113.4,79.1h378.3c0.6,0,1.1,0.5,1.1,1.1v61.2c0,0.6-0.5,1.1-1.1,1.1H113.4
 		c-0.6,0-1.1-0.5-1.1-1.1V80.2C112.3,79.6,112.8,79.1,113.4,79.1z"/>
 	<path id="use4580" inkscape:tile-x0="205.71428" inkscape:tile-y0="150.57649" class="st4" d="M138.8,217.2h36.6
@@ -42,32 +42,14 @@
 		c0.6,0,1.1,0.5,1.1,1.1v20c0,0.6-0.5,1.1-1.1,1.1H187c-0.6,0-1.1-0.5-1.1-1.1v-20C185.9,278.8,186.4,278.4,187,278.4z"/>
 	<path id="use4596" inkscape:tile-x0="205.71428" inkscape:tile-y0="150.57649" class="st4" d="M187,309.6h36.6
 		c0.6,0,1.1,0.5,1.1,1.1v20c0,0.6-0.5,1.1-1.1,1.1H187c-0.6,0-1.1-0.5-1.1-1.1v-20C185.9,310.1,186.4,309.6,187,309.6z"/>
-	<path id="use4600" inkscape:tile-x0="205.71428" inkscape:tile-y0="150.57649" class="st4" d="M234.4,217.2H271
-		c0.6,0,1.1,0.5,1.1,1.1v20c0,0.6-0.5,1.1-1.1,1.1h-36.6c-0.6,0-1.1-0.5-1.1-1.1v-20C233.3,217.7,233.8,217.2,234.4,217.2z"/>
-	<path id="use4602" inkscape:tile-x0="205.71428" inkscape:tile-y0="150.57649" class="st4" d="M234.4,247.7H271
-		c0.6,0,1.1,0.5,1.1,1.1v20c0,0.6-0.5,1.1-1.1,1.1h-36.6c-0.6,0-1.1-0.5-1.1-1.1v-20C233.3,248.2,233.8,247.7,234.4,247.7z"/>
-	<path id="use4604" inkscape:tile-x0="205.71428" inkscape:tile-y0="150.57649" class="st4" d="M234.4,278.4H271
-		c0.6,0,1.1,0.5,1.1,1.1v20c0,0.6-0.5,1.1-1.1,1.1h-36.6c-0.6,0-1.1-0.5-1.1-1.1v-20C233.3,278.8,233.8,278.4,234.4,278.4z"/>
 	<path id="use4606" inkscape:tile-x0="205.71428" inkscape:tile-y0="150.57649" class="st4" d="M234.4,309.6H271
 		c0.6,0,1.1,0.5,1.1,1.1v20c0,0.6-0.5,1.1-1.1,1.1h-36.6c-0.6,0-1.1-0.5-1.1-1.1v-20C233.3,310.1,233.8,309.6,234.4,309.6z"/>
 	<path id="use4608" inkscape:tile-x0="205.71428" inkscape:tile-y0="150.57649" class="st4" d="M282.6,187.3h36.6
 		c0.6,0,1.1,0.5,1.1,1.1v20c0,0.6-0.5,1.1-1.1,1.1h-36.6c-0.6,0-1.1-0.5-1.1-1.1v-20C281.5,187.8,282,187.3,282.6,187.3z"/>
-	<path id="use4610" inkscape:tile-x0="205.71428" inkscape:tile-y0="150.57649" class="st4" d="M282.6,217.2h36.6
-		c0.6,0,1.1,0.5,1.1,1.1v20c0,0.6-0.5,1.1-1.1,1.1h-36.6c-0.6,0-1.1-0.5-1.1-1.1v-20C281.5,217.7,282,217.2,282.6,217.2z"/>
-	<path id="use4612" inkscape:tile-x0="205.71428" inkscape:tile-y0="150.57649" class="st4" d="M282.6,247.7h36.6
-		c0.6,0,1.1,0.5,1.1,1.1v20c0,0.6-0.5,1.1-1.1,1.1h-36.6c-0.6,0-1.1-0.5-1.1-1.1v-20C281.5,248.2,282,247.7,282.6,247.7z"/>
-	<path id="use4614" inkscape:tile-x0="205.71428" inkscape:tile-y0="150.57649" class="st4" d="M282.6,278.4h36.6
-		c0.6,0,1.1,0.5,1.1,1.1v20c0,0.6-0.5,1.1-1.1,1.1h-36.6c-0.6,0-1.1-0.5-1.1-1.1v-20C281.5,278.8,282,278.4,282.6,278.4z"/>
 	<path id="use4616" inkscape:tile-x0="205.71428" inkscape:tile-y0="150.57649" class="st4" d="M282.6,309.6h36.6
 		c0.6,0,1.1,0.5,1.1,1.1v20c0,0.6-0.5,1.1-1.1,1.1h-36.6c-0.6,0-1.1-0.5-1.1-1.1v-20C281.5,310.1,282,309.6,282.6,309.6z"/>
 	<path id="use4618" inkscape:tile-x0="205.71428" inkscape:tile-y0="150.57649" class="st4" d="M330.8,187.3h36.6
 		c0.6,0,1.1,0.5,1.1,1.1v20c0,0.6-0.5,1.1-1.1,1.1h-36.6c-0.6,0-1.1-0.5-1.1-1.1v-20C329.7,187.8,330.2,187.3,330.8,187.3z"/>
-	<path id="use4620" inkscape:tile-x0="205.71428" inkscape:tile-y0="150.57649" class="st4" d="M330.8,217.2h36.6
-		c0.6,0,1.1,0.5,1.1,1.1v20c0,0.6-0.5,1.1-1.1,1.1h-36.6c-0.6,0-1.1-0.5-1.1-1.1v-20C329.7,217.7,330.2,217.2,330.8,217.2z"/>
-	<path id="use4622" inkscape:tile-x0="205.71428" inkscape:tile-y0="150.57649" class="st4" d="M330.8,247.7h36.6
-		c0.6,0,1.1,0.5,1.1,1.1v20c0,0.6-0.5,1.1-1.1,1.1h-36.6c-0.6,0-1.1-0.5-1.1-1.1v-20C329.7,248.2,330.2,247.7,330.8,247.7z"/>
-	<path id="use4624" inkscape:tile-x0="205.71428" inkscape:tile-y0="150.57649" class="st4" d="M330.8,278.4h36.6
-		c0.6,0,1.1,0.5,1.1,1.1v20c0,0.6-0.5,1.1-1.1,1.1h-36.6c-0.6,0-1.1-0.5-1.1-1.1v-20C329.7,278.8,330.2,278.4,330.8,278.4z"/>
 	<path id="use4626" inkscape:tile-x0="205.71428" inkscape:tile-y0="150.57649" class="st4" d="M330.8,309.6h36.6
 		c0.6,0,1.1,0.5,1.1,1.1v20c0,0.6-0.5,1.1-1.1,1.1h-36.6c-0.6,0-1.1-0.5-1.1-1.1v-20C329.7,310.1,330.2,309.6,330.8,309.6z"/>
 	<path id="use4628" inkscape:tile-x0="205.71428" inkscape:tile-y0="150.57649" class="st4" d="M378.7,187.3h36.6
@@ -105,12 +87,10 @@
 	<path id="rect4749" class="st2" d="M139.3,114.9h116.6c1.8,0,3.2,1.4,3.2,3.2v4.1c0,1.8-1.4,3.2-3.2,3.2H139.3
 		c-1.8,0-3.2-1.4-3.2-3.2v-4.1C136.1,116.3,137.5,114.9,139.3,114.9z"/>
 </g>
-<text transform="matrix(1 0 0 1 350.6988 110.0814)" class="st2 st6 st7">Assign</text>
-<g>
-	
-		<image style="overflow:visible;" width="1181" height="1181" xlink:href="../Desktop/Projects/psd/pen-1587565.png"  transform="matrix(1.960914e-02 5.781671e-03 -5.781671e-03 1.960914e-02 348.9438 78.4921)">
-	</image>
-	
-		<ellipse transform="matrix(5.185586e-02 -0.9987 0.9987 5.185586e-02 262.1115 437.6856)" class="st8" cx="361.6" cy="80.8" rx="1.9" ry="1.9"/>
-</g>
+<path id="use4600_1_" inkscape:tile-x0="205.71428" inkscape:tile-y0="150.57649" class="st4" d="M221.3,173.4h36.6
+	c0.6,0,1.1,0.5,1.1,1.1v20c0,0.6-0.5,1.1-1.1,1.1h-36.6c-0.6,0-1.1-0.5-1.1-1.1v-20C220.2,173.9,220.7,173.4,221.3,173.4z"/>
+<path id="use4590_1_" inkscape:tile-x0="205.71428" inkscape:tile-y0="150.57649" class="st4" d="M173.9,173.4h36.6
+	c0.6,0,1.1,0.5,1.1,1.1v20c0,0.6-0.5,1.1-1.1,1.1h-36.6c-0.6,0-1.1-0.5-1.1-1.1v-20C172.8,173.9,173.3,173.4,173.9,173.4z"/>
+<text transform="matrix(1 0 0 1 222.6135 263.6329)" class="st3 st6 st7">Assign</text>
+<text transform="matrix(1 0 0 1 228.0709 257.8555)" class="st3 st6 st8">i</text>
 </svg>
