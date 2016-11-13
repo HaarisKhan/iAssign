@@ -54,6 +54,9 @@ def Post(request):
         return HttpResponse('Request must be POST.')
 
 
+def forgot(request):
+    return render(request, "forgot_password.html")
+
 def Messages(request):
     c = models.Chat.objects.all()
     return render(request, "messages.html" , {'chat': c})
