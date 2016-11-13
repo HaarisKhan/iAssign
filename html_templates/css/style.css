@@ -1,4 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Courgette);
+@import url(http://fonts.googleapis.com/css?family=Ranga);
+@import url(http://fonts.googleapis.com/css?family=Dosis);
 * {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -13,6 +15,13 @@ body {
 }
 
 h1 {
+  color: #9f9b9b;
+  text-align: center;
+  font-family: 'Courgette', cursive;
+  font-size: 50px;
+}
+
+.login-title {
   color: #9f9b9b;
   text-align: center;
   font-family: 'Courgette', cursive;
@@ -110,7 +119,7 @@ h1 {
   background: #6984C9;
   display: inline-block;
   width: 100%;
-  font-size: 16px;
+  font-size: 20px;
   height: 50px;
   color: #fff;
   text-decoration: none;
@@ -118,6 +127,10 @@ h1 {
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   border-radius: 4px;
+  font-family: 'Dosis', cursive;
+}
+.log-btn:hover {
+    box-shadow: 0 10px 10px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 .change-pswd-btn {
   /*background: #0AC986;*/
@@ -132,6 +145,9 @@ h1 {
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   border-radius: 4px;
+}
+.change-pswd-btn:hover {
+    box-shadow: 0 10px 10px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 .link {
