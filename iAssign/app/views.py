@@ -12,6 +12,10 @@ from . import models
 # Create your views here.
 
 
+def ThirdAuthLogin(request):
+    return render(request, "index.html", {'request': request,
+                                         'user': request.user})
+
 def Login(request):
     next = request.GET.get('next', '/home/')
     if request.method == "POST":
