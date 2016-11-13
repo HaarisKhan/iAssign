@@ -62,9 +62,27 @@ def Post(request):
 def forgot(request):
     return render(request, "forgot_password.html")
 
+
 def Messages(request):
     c = models.Chat.objects.all()
     return render(request, "messages.html", {'chat': c})
+
+
+def calendar(request):
+    if request.POST:
+        startTime = request.POST['start_time']
+        endTime = request.POST['end_time']
+        description = request.POST['description']
+
+        timeInterval = models.TimeIntervalObject
+
+        timeInterval.start_time = startTime
+        timeInterval.end_time = endTime
+        timeInterval.description = description
+
+
+
+    return render(request, "appPage.html")
 
 """
 <form action="#" method="get">
