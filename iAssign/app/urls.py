@@ -9,7 +9,12 @@ urlpatterns = [
     url(r'^signup/$', views.SignUp, name='signup'),
     url(r'^post/$', views.Post, name='post'),
     url(r'^messages/$', views.Messages, name='messages'),
+<<<<<<< HEAD
+    url(r'^board/$', views.RequestBoardPage, name='boards')
+]
+=======
     url('', include('social.apps.django_app.urls', namespace='social')),
     url('', include('django.contrib.auth.urls', namespace='auth')),
     url(r'^$', views.ThirdAuthLogin, name='thirdauthlogin'),
     ]
+>>>>>>> 0a4a73f76d9332f4c88e1f8c547dea328de67e4d
