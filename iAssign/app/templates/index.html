@@ -58,7 +58,7 @@
                     <li>
                         {% if user and not user.is_anonymous %}
                          <li>
-                           <a>Hello {{ user.get_full_name|default:user.username }}!</a>
+                           <a  href="{% url 'renderApp' %}">Hello {{ user.get_full_name|default:user.username }}!</a>
                          </li>
                          <li>
                            <a href="{% url 'auth:logout' %}?next={{ request.path }}">Logout</a>
@@ -111,7 +111,7 @@
 {#                     <li>#}
 {#                       <a>Hello {{ user.get_full_name|default:user.username }}!</a>#}
 {#                     </li>#}
-{##}
+
 {#                     <li>#}
 {#                       <a href="{% url 'auth:logout' %}?next={{ request.path }}">Logout</a>#}
 {#                     </li>#}
@@ -146,12 +146,12 @@
                     <h1 style="font-family: 'Courgette', cursive; text-shadow: 0.1em 0.1em 0.2em black; font-size:100px; -webkit-text-stroke: 1px black;">iAssign</h1>
                     <br>
                     {% if user and not user.is_anonymous %}
-                     <li>
-                       <a>Hello {{ user.get_full_name|default:user.username }}!</a>
-                     </li>
-                     <li>
-                       <a href="{% url 'auth:logout' %}?next={{ request.path }}">Logout</a>
-                     </li>
+{#                     <li>#}
+{#                       <a>Hello {{ user.get_full_name|default:user.username }}!</a>#}
+{#                     </li>#}
+{#                     <li>#}
+{#                       <a href="{% url 'auth:logout' %}?next={{ request.path }}">Logout</a>#}
+{#                     </li>#}
                    {% else %}
 {#                        <button type="button" class="log-btn" onclick="{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}">Login with Google</button>#}
 {#                        <button type="button" class="log-btn" onclick="{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}">Login with Google</button>#}
@@ -179,12 +179,12 @@
                     <h1 style="font-family: 'Courgette', cursive; text-shadow: 0.1em 0.1em 0.2em black; font-size:100px; -webkit-text-stroke: 1px black;">iAssign</h1>
                     <br>
                     {% if user and not user.is_anonymous %}
-                     <li>
-                       <a>Hello {{ user.get_full_name|default:user.username }}!</a>
-                     </li>
-                     <li>
-                       <a href="{% url 'auth:logout' %}?next={{ request.path }}">Logout</a>
-                     </li>
+{#                     <li>#}
+{#                       <a>Hello {{ user.get_full_name|default:user.username }}!</a>#}
+{#                     </li>#}
+{#                     <li>#}
+{#                       <a href="{% url 'auth:logout' %}?next={{ request.path }}">Logout</a>#}
+{#                     </li>#}
                    {% else %}
 {#                        <button type="button" class="log-btn" onclick="{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}">Login with Google</button>#}
 {#                        <button type="button" class="log-btn" onclick="{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}">Login with Google</button>#}

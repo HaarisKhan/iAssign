@@ -10,19 +10,70 @@
   <meta name="Ram K" content="That's me">
   <link rel="stylesheet" href="{% static "css/appPage.css" %}">
   <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
-  <script src="{% static "js/addPopUp.js" %}"></script>
     <script src="{% static 'js/chat.js' %}"></script>
 
 </head>
 <body>
-	<div class="container-fluid">
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-static-top navbar-default" role="navigation" style="margin-bottom: 0; border: 0">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{% url 'home' %}">iAssign</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        {% if user and not user.is_anonymous %}
+                         <li>
+                           <a>Hello {{ user.get_full_name|default:user.username }}!</a>
+                         </li>
+                         <li>
+                           <a href="{% url 'auth:logout' %}?next={{ request.path }}">Logout</a>
+                         </li>
+                       {% else %}
+    {#                        <button type="button" class="log-btn" onclick="{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}">Login with Google</button>#}
+    {#                        <button type="button" class="log-btn" onclick="{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}">Login with Google</button>#}
+                         <li>
+                           <a href="{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}">Login with Google</a>
+                         </li>
+                            <li>
+                            <a href='http://accounts.google.com/SignUp?continue=https%3A%2F%2Fwww.google.com%2F&hl=en'>Sign Up</a>
+                        </li>
+
+                       {% endif %}
+{#                        <a href={% url 'login' %}>Log In</a>#}
+                    </li>
+
+                    <!-- <li>
+                        <a href="#">Contact</a>
+                    </li> -->
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+	<div class="container-fluid" style="height: calc(100vh - 50px); width: 100vw">
 	  	<div class="row mainRow">
   			<div class="col-sm-3 col-xs-4 mainRow">
   				<div class="row" id = "calendar">
-  					<h3 style="color: white;">Calendar</h3>	
+  					<h3 style="color: white; font-family: 'Dosis', cursive;">Calendar</h3>
+                    <li>
+                    <a href="{%  url 'DisplayCalendar' %}" style="color:white">My Calendar</a>
+                    </li>
+
   				</div>
   				<div class="row" id = "chat">
-  					<h3 style="color: white;">Chat</h3>
+  					<h3 style="color: white; font-family: 'Dosis', cursive;">Chat</h3>
     <div id="chat-body" class="panel panel-default">
         <div class="panel-heading">Chat Box</div>
         <div id="msg-list-div" class="panel-body">
@@ -58,8 +109,8 @@
   			</div>
 
     		<div class="col-sm-6 col-xs-8" id = "main">
-    			<h3>Main</h3>
-    				
+    			<h3 style="font-family: 'Dosis', cursive;">Main</h3>
+
     				<button id = "addBtn" type="button" class="btn btn-success btn-circle" onclick="popup()"><span class="glyphicon glyphicon-plus glyphicon-larger"></span></button>
 
     				<div id="addModal" class="modal">
@@ -76,14 +127,18 @@
 					</form>
   					</div>
   					</div>
+                {% if calendar_display %}
+                    {{ calendar_display|safe }}
+                {% endif %}
 
     		</div>
 
     		<div class="col-sm-3 col-xs-hidden" id="todoRequest">
-    			<h3>Todo/Requests</h3>
+    			<h3 style="font-family: 'Dosis', cursive;">Todo/Requests</h3>
     		</div>
   		</div>
   	</div>
+<script src="{% static "js/addPopUp.js" %}"></script>
 </body>
 </html>
 

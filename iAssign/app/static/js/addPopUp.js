@@ -3,11 +3,11 @@ var btn = document.getElementById("addBtn");
 var span = document.getElementsByClassName("close")[0];
 
 function popup() {
-    addModal.style.display = "block";
+    modal.style.display = "block";
 }
 
 function closeSpan() {
-    addModal.style.display = "none";
+    modal.style.display = "none";
 }
 
 window.onclick = function(event) {
